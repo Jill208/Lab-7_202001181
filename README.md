@@ -68,3 +68,34 @@ Based on these boundary test cases, we can design the following test cases:
 |Valid input: day=31, month=5, year=2000|	Previous date|
 |Valid input: day=15, month=6, year=2000|	Previous date|
 |Invalid input: day=31, month=4, year=2000|	An error message|
+
+
+Program 1: The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.
+
+                        int linearSearch(int v, int a[])
+                        {
+                            int i = 0;
+                            while (i < a.length)
+                            {
+                                if (a[i] == v)
+                                return(i);
+                                i++;
+                            }
+                            return (-1);    
+                        }
+
+                        @Test
+                        public void test() {
+                            unittesting obj = new unittesting();
+                            int[] arr1 = {2, 4, 6, 8, 10};
+                            int[] arr2 = {-3, 0, 3, 7, 11};
+                            int[] arr3 = {1, 3, 5, 7, 9};
+                            int[] arr4 = {};
+
+                            assertEquals(0, obj.linearSearch(2, arr1));
+                            assertEquals(4, obj.linearSearch(10, arr1));
+                            assertEquals(-1, obj.linearSearch(3, arr2));
+                            assertEquals(4, obj.linearSearch(9, arr3));
+                            assertEquals(-1, obj.linearSearch(2, arr4));
+                        }
+
