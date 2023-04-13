@@ -134,3 +134,68 @@ Test suites:
 |[2, 4, 6, 8]|	2.2	|Invalid input|
 |[2, 4, 6, 8]|	a	|Invalid input|
 |[1.1, c, 5, 7]|	2|	Invalid input|
+
+
+Program 2: The function countItem returns the number of times a value v appears in an array of integers a.
+
+```
+int countItem(int v, int a[])
+{
+    int count = 0;
+    for (int i = 0; i < a.length; i++)
+        {
+            if (a[i] == v)
+            count++;
+        }
+    return (count);
+}
+
+public void testCountItem() {
+    CountItems counter = new CountItems();
+    int[] arr1 = {1, 2, 3, 4, 5};
+    int[] arr2 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int[] arr3 = {1, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9};
+    int[] arr4 = {};
+    int v1 = 3;
+    int v2 = 10;
+    assertEquals(1, counter.countItem(v1, arr1));
+    assertEquals(0, counter.countItem(v2, arr1));
+    assertEquals(9, counter.countItem(v1, arr2));
+    assertEquals(0, counter.countItem(v2, arr2));
+    assertEquals(1, counter.countItem(v1, arr3));
+    assertEquals(0, counter.countItem(v2, arr3));
+    assertEquals(0, counter.countItem(v2, arr4));
+}
+```
+
+Equivalence Partitioning:
+
+|Tester Action and Input Data|	Expected Outcome|
+|----------------------------|------------------|
+|v is present in a|	Number of times v appears in a|
+|v is not present in a|	0|
+
+Boundary Value Analysis:
+
+|Tester Action and Input Data|	Expected Outcome|
+|----------------------------|------------------|
+|Empty array a|	0|
+|v is present once in a|	1|
+|v is present multiple times in a|	Number of times v appears in a|
+|v is not present in a|	0|
+
+Test suites:
+
+|Tester Action and Input Data|	Value to be found|	Expected Outcome|
+|----------------------------|-------------------|------------------|
+|Equivalence partition:		| | |
+|[1, 2, 3, 4, 5]	3	1
+|[5, 10, 15, 20, 25]	11	0
+|Boundary Value Analysis: | | |		
+|[]	|5|	0|
+|[5]	|5|	1|
+|[15]	|5	|0|
+|[5, 10, 5, 20, 25]	|5|	2|
+|[2, 4, 6, 8]|	2.2|	Invalid input|
+|[2, 4, 6, 8]|	|a	|Invalid input|
+|[3.3, r, 5, 7]|	2|	Invalid input|
