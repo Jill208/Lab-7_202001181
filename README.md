@@ -621,5 +621,5 @@ Test 8: p = vector with three or more points with the same y component, and all 
 
 
 
-Document link which content Screenshots
-[-----](https://docs.google.com/document/d/18u-IbJ71mxQW967XtmtaHkiKIAZFuGNBEBS075aDkAI/edit?usp=sharing)
+Document link which content Screenshots:
+[Link](https://docs.google.com/document/d/18u-IbJ71mxQW967XtmtaHkiKIAZFuGNBEBS075aDkAI/edit?usp=sharing)
