@@ -7,6 +7,7 @@ Equivalence Class Partitions
 Day:
 
 |Partition ID	|Range|	Status|
+---| --- | ---| ---|
 |E1|	|Between 1 and 28|	|Valid|
 |E2|	|Less than 1|	|Invalid|
 |E3|  |Greater than 31|	|Invalid|
