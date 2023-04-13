@@ -189,8 +189,8 @@ Test suites:
 |Tester Action and Input Data|	Value to be found|	Expected Outcome|
 |----------------------------|-------------------|------------------|
 |Equivalence partition:		| | |
-|[1, 2, 3, 4, 5]	3	1
-|[5, 10, 15, 20, 25]	11	0
+|[1, 2, 3, 4, 5]|	3|	1|
+|[5, 10, 15, 20, 25]|	11|	0|
 |Boundary Value Analysis: | | |		
 |[]	|5|	0|
 |[5]	|5|	1|
