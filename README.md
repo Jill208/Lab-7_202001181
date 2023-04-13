@@ -430,3 +430,154 @@ Program 4: The following problem has been adapted from The Art of Software Testi
   </tr>
 </table>
 </br>
+
+
+
+ **Program 5: The function prefix (String s1, String s2) returns whether or not the string s1 is a prefix of string s2 (you may assume that neither s1 nor s2 is null).**
+    public static boolean prefix(String s1, String s2)
+    {
+        if (s1.length() > s2.length())
+        {
+            return false;
+        }
+
+        for (int i = 0; i < s1.length(); i++)
+        {
+            if (s1.charAt(i) != s2.charAt(i))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public void testPrefix() {
+        String s1 = "hello";
+        String s2 = "hello world";
+        assertTrue(unittesting.prefix(s1, s2));
+
+        s1 = "abc";
+        s2 = "abcd";
+        assertTrue(unittesting.prefix(s1, s2));
+
+        s1 = "";
+        s2 = "hello";
+        assertTrue(unittesting.prefix(s1, s2));
+
+        s1 = "hello";
+        s2 = "hi";
+        assertFalse(unittesting.prefix(s1, s2));
+
+        s1 = "abc";
+        s2 = "def";
+        assertFalse(unittesting.prefix(s1, s2));
+    }
+
+**Equivalence Partitioning:**
+
+| Tester Action and Input Data     | Expected Outcome      | 
+| ------------- | :---: | 
+| Empty string s1 and s2        | True         | 
+| Empty string s1 and non-empty s2         | True         | 
+| Non-empty s1 is a prefix of non-empty s2        | True         | 
+| Non-empty s1 is not a prefix of s2         | False         | 
+| Non-empty s1 is longer than s2         | False         | 
+
+**Boundary Value Analysis:**
+
+| Tester Action and Input Data     | Expected Outcome      | 
+| ------------- | :---: | 
+| Empty string s1 and s2        | True         | 
+| Empty string s1 and non-empty s2         | True         | 
+| Non-empty s1 is not a prefix of s2         | False         | 
+| Non-empty s1 is longer than s2         | False         | 
+
+**Test Suites**
+
+| Tester Action and Input Data | Expected Outcome |
+|------------------------------|------------------|
+| **Equivalence Partitioning**|
+| s1= "abcd",s2 = "abcd" | true |
+| s1 = "",s2 = "" | true |
+| s1 = "ha",s2 = "hasrh" | true |
+| s1 = "hcp",s2 = "hc" | false |
+| s1 = "abc",s2 = "" | false |
+| s1 = "",s2 = "abc" | true |
+| s1 = "o",s2 = "ott" | true |
+| s1 = "abc",s2 = "def" | false |
+| s1 = "deg",s2 = "def" | false |
+| **Boundary value analysis**|
+| s1= "abcd",s2 = "abcd" | true |
+| s1= "",s2 = "" | true |
+| s1= "abcd",s2 = "" | false |
+| s1= "",s2 = "abcd" | true |
+| s1 = "aef",s2 = "def" | false |
+| s1 = "def",s2 = "deg" | false |
+| s1 = "a",s2 = "att" | true |
+| s1 = "harsh",s2 = "patel" | false |
+
+
+### P6: Consider again the triangle classification program (P4) with a slightly different specification: The programreads floating values from the standard input. The three values A, B, and C are interpreted asrepresenting the lengths of the sides of a triangle. The program then prints a message to the standard output that states whether the triangle, if it can be formed, is scalene, isosceles, equilateral, or right angled. Determine the following for the above program:
+
+**a) Identify the equivalence classes for the system**
+Equivalence Classes:<br>
+EC1: Invalid inputs (negative or zero values)<br>
+EC2: Non-triangle (sum of the two shorter sides is not greater than the longest side)<br>
+EC3: Scalene triangle (no sides are equal)<br>
+EC4: Isosceles triangle (two sides are equal)<br>
+EC5: Equilateral triangle (all sides are equal)<br>
+EC6: Right-angled triangle (satisfies the Pythagorean theorem)<br>
+
+**b) Identify test cases to cover the identified equivalence classes. Also, explicitly mention which test case would cover which equivalence class. (Hint: you must need to be ensure that the identified set of test cases cover all identified equivalence classes)**
+Test cases:<br>
+TC1: -1, 0 <br>
+TC2: 1, 2, 5<br>
+TC3: 3, 4, 5<br>
+TC4: 5, 5, 7<br>
+TC5: 6, 6, 6<br>
+TC6: 3, 4, 5<br>
+
+Test case 1 covers class 1, test case 2 covers class 2, test case 3 covers class 3, test case 4 covers class 4, test case 5 covers class 5, and test case 6 covers class 6
+
+**c) For the boundary condition A + B > C case (scalene triangle), identify test cases to verify the boundary.**
+2, 3, 6<br>
+3, 4, 8<br>
+Both test cases have two sides that are shorter than the third side, and should not form a triangle
+
+<br>
+
+**d) For the boundary condition A = C case (isosceles triangle), identify test cases to verify the boundary.**
+1, 2, 1<br>
+0, 2, 0<br>
+5, 6, 5<br>
+Both test cases have two sides that are equal, but only test case 2 should form an isosceles triangle, other input are invalid.
+
+<br>
+
+**e) For the boundary condition A = B = C case (equilateral triangle), identify test cases to verify the boundary.**
+5, 5, 5<br>
+0, 0, 0<br>
+Both test cases have all sides equal, but only test case 1 should form an equilateral triangle, other input are invalid.
+
+<br>
+
+**f) For the boundary condition A2 + B2 = C2 case (right-angle triangle), identify test cases to verify the boundary.**
+3, 4, 5
+0, 0, 0
+-3, -4, -5
+Both test cases satisfy the Pythagorean theorem, but only test case 1 should form right-angled triangle, other input are invalid.
+triangle
+
+<br>
+
+**g) For the non-triangle case, identify test cases to explore the boundary.**
+Test cases for the non-triangle case:<br>
+TC11 (EC3): A=2, B=2, C=4 (sum of A and B is less than C)<br>
+
+<br>
+
+**h) For non-positive input, identify test points.**
+Test points for non-positive input:<br>
+TP1 (EC2): A=0, B=4, C=5 (invalid input)<br>
+TP2 (EC2): A=-2, B=4, C=5 (invalid input)<br>
+Note: Test cases TC1 to TC10 covers all identified equivalence classes.<br>
