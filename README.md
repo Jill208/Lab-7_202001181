@@ -54,3 +54,17 @@ Boundary Value Analysis: Using boundary value analysis, we can identify the foll
     (7) One day before earliest date: (31, 12, 1899)
     (8) One day after latest date: (1, 1, 2016)
 
+
+Based on these boundary test cases, we can design the following test cases:
+
+| Tester Action and Input Data |	Expected Outcome |
+|------------------------------|---------------------|
+|Valid input: day=1, month=1, year=1900|	Invalid date|
+|Valid input: day=31, month=12, year=2015|	Previous date|
+|Invalid input: day=0, month=6, year=2000|	An error message|
+|Invalid input: day=32, month=6, year=2000|	An error message|
+|Invalid input: day=29, month=2, year=2000|	An error message|
+|Valid input: day=1, month=6, year=2000|	Previous date|
+|Valid input: day=31, month=5, year=2000|	Previous date|
+|Valid input: day=15, month=6, year=2000|	Previous date|
+|Invalid input: day=31, month=4, year=2000|	An error message|
