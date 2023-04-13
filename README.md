@@ -70,7 +70,7 @@ Based on these boundary test cases, we can design the following test cases:
 |Invalid input: day=31, month=4, year=2000|	An error message|
 
 
-Program 1: The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.
+**Program 1: The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.**
 
 ```
 int linearSearch(int v, int a[])
@@ -100,14 +100,14 @@ public void test() {
     assertEquals(-1, obj.linearSearch(2, arr4));
 }
 ```
-Equivalence Partitioning:
+**Equivalence Partitioning:**
 
 | Tester Action and Input Data | Expected Outcome |
 |------------------------------|------------------|
 |v is present in a|	Index of v|
 |v is not present in a|	-1|
 
-Boundary Value Analysis:
+**Boundary Value Analysis:**
 
 | Tester Action and Input Data | Expected Outcome |
 |------------------------------|------------------|
@@ -116,7 +116,7 @@ Boundary Value Analysis:
 |v is present at the last index of a length of a|	a-1|
 |v is not present in a|	-1|
 
-Test suites:
+**Test suites:**
 
 | Tester Action and Input Data | Value to be found | Expected Outcome |
 |------------------------------|-------------------|------------------|
@@ -136,7 +136,7 @@ Test suites:
 |[1.1, c, 5, 7]|	2|	Invalid input|
 
 
-Program 2: The function countItem returns the number of times a value v appears in an array of integers a.
+**Program 2: The function countItem returns the number of times a value v appears in an array of integers a.**
 
 ```
 int countItem(int v, int a[])
@@ -168,14 +168,14 @@ public void testCountItem() {
 }
 ```
 
-Equivalence Partitioning:
+**Equivalence Partitioning:**
 
 |Tester Action and Input Data|	Expected Outcome|
 |----------------------------|------------------|
 |v is present in a|	Number of times v appears in a|
 |v is not present in a|	0|
 
-Boundary Value Analysis:
+**Boundary Value Analysis:**
 
 |Tester Action and Input Data|	Expected Outcome|
 |----------------------------|------------------|
@@ -184,7 +184,7 @@ Boundary Value Analysis:
 |v is present multiple times in a|	Number of times v appears in a|
 |v is not present in a|	0|
 
-Test suites:
+**Test suites:**
 
 |Tester Action and Input Data|	Value to be found|	Expected Outcome|
 |----------------------------|-------------------|------------------|
@@ -200,7 +200,7 @@ Test suites:
 |[2, 4, 6, 8]|	|a	|Invalid input|
 |[3.3, r, 5, 7]|	2|	Invalid input|
 
-Program 3: The function binarySearch searches for a value v in an ordered array of integers a. If v appears in the array a, then the function returns an index i, such that a[i] == v; otherwise, -1 is returned.
+**Program 3: The function binarySearch searches for a value v in an ordered array of integers a. If v appears in the array a, then the function returns an index i, such that a[i] == v; otherwise, -1 is returned.**
 
 Assumption: the elements in the array a are sorted in non-decreasing order.
 
@@ -245,14 +245,14 @@ Assumption: the elements in the array a are sorted in non-decreasing order.
     }
     
     
- Equivalence Partitioning:
+ **Equivalence Partitioning:**
 
 | Tester Action and Input Data     | Expected Outcome      | 
 | ------------- | :---: | 
 | v is present in a        | Index of v         | 
 | v is not present in a         | -1         | 
 
-Boundary Value Analysis:
+**Boundary Value Analysis:**
 
 | Tester Action and Input Data     | Expected Outcome      | 
 | ------------- | :---: | 
@@ -261,7 +261,7 @@ Boundary Value Analysis:
 | v is present at the last index of a length of a        | a-1         | 
 | v is not present in a         | -1         | 
 
-Test suites:
+**Test suites:**
 
 | Tester Action and Input Data | Value to be found | Expected Outcome |
 |------------------------------|-------------------|------------------|
@@ -281,7 +281,7 @@ Test suites:
 | [2, 4, 6, 8]                 | a                 | Invalid input    |
 | [1.1, c, 5, 7]               | 2                 | Invalid input    |
 
-Program 4: The following problem has been adapted from The Art of Software Testing, by G. Myers (1979). The function triangle takes three integer parameters that are interpreted as the lengths of the sides of a triangle. It returns whether the triangle is equilateral (three lengths equal), isosceles (two lengths equal), scalene (no lengths equal), or invalid (impossible lengths).
+**Program 4: The following problem has been adapted from The Art of Software Testing, by G. Myers (1979). The function triangle takes three integer parameters that are interpreted as the lengths of the sides of a triangle. It returns whether the triangle is equilateral (three lengths equal), isosceles (two lengths equal), scalene (no lengths equal), or invalid (impossible lengths).**
 
  final int EQUILATERAL = 0;
     final int ISOSCELES = 1;
