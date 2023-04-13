@@ -15,3 +15,11 @@ Day:
 | E5 |  Equals 29	  | Valid |
 | E6 |  Equals 31	  | Valid |
 
+Month:
+
+| Partition ID |	Range |	Status |
+|--------------|---------|--------|
+|E7|	Between 1 and 12	|Valid|
+|E8|	Less than 1	|Invalid|
+|E9|	Greater than 12|	Invalid|
+
