@@ -23,3 +23,11 @@ Month:
 |E8|	Less than 1	|Invalid|
 |E9|	Greater than 12|	Invalid|
 
+Year:
+
+| Partition ID |	Range |	Status |
+|--------------|---------|--------|
+|E10|	Between 1900 and 2015|	Valid|
+|E11|	Less than 1|	Invalid|
+|E12|	Greater than 2015|	Invalid|
+
