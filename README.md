@@ -199,3 +199,85 @@ Test suites:
 |[2, 4, 6, 8]|	2.2|	Invalid input|
 |[2, 4, 6, 8]|	|a	|Invalid input|
 |[3.3, r, 5, 7]|	2|	Invalid input|
+
+Program 3: The function binarySearch searches for a value v in an ordered array of integers a. If v appears in the array a, then the function returns an index i, such that a[i] == v; otherwise, -1 is returned.
+
+Assumption: the elements in the array a are sorted in non-decreasing order.
+
+    int binarySearch(int v, int a[])
+    {
+        int lo,mid,hi;
+        lo = 0;
+        hi = a.length-1;
+        while (lo <= hi)
+        {
+            mid = (lo+hi)/2;
+            if (v == a[mid])
+            return (mid);
+            else if (v < a[mid])
+            hi = mid-1;
+            else
+            lo = mid+1;
+        }
+        return(-1);
+    }
+    
+    import static org.junit.Assert.assertEquals;
+    import org.junit.Test;
+    
+    public class BinarySearchTest {
+        @Test
+        public void testBinarySearch() {
+            BinarySearch bs = new BinarySearch();
+
+            int[] arr1 = {1, 3, 5, 7, 9};
+            assertEquals(0, bs.binarySearch(1, arr1)); // search for 1 in {1, 3, 5, 7, 9}
+            assertEquals(2, bs.binarySearch(5, arr1)); // search for 5 in {1, 3, 5, 7, 9}
+            assertEquals(4, bs.binarySearch(9, arr1)); // search for 9 in {1, 3, 5, 7, 9}
+            assertEquals(-1, bs.binarySearch(4, arr1)); // search for 4 in {1, 3, 5, 7, 9}
+
+            int[] arr2 = {2, 4, 6, 8, 10, 12};
+            assertEquals(-1, bs.binarySearch(1, arr2)); // search for 1 in {2, 4, 6, 8, 10, 12}
+            assertEquals(2, bs.binarySearch(6, arr2)); // search for 6 in {2, 4, 6, 8, 10, 12}
+            assertEquals(5, bs.binarySearch(12, arr2)); // search for 12 in {2, 4, 6, 8, 10, 12}
+            assertEquals(-1, bs.binarySearch(7, arr2)); // search for 7 in {2, 4, 6, 8, 10, 12}
+        }
+    }
+    
+    
+ **Equivalence Partitioning:**
+
+| Tester Action and Input Data     | Expected Outcome      | 
+| ------------- | :---: | 
+| v is present in a        | Index of v         | 
+| v is not present in a         | -1         | 
+
+**Boundary Value Analysis:**
+
+| Tester Action and Input Data     | Expected Outcome      | 
+| ------------- | :---: | 
+| Empty array a        | -1         | 
+| v is present at the first index of a         | 0         | 
+| v is present at the last index of a length of a        | a-1         | 
+| v is not present in a         | -1         | 
+
+**Test suites:**
+
+| Tester Action and Input Data | Value to be found | Expected Outcome |
+|------------------------------|-------------------|------------------|
+| **Valid partition:**                                                |
+| [1, 2, 3, 4, 5]              | 3                 | 2                |
+| [5, 10, 15, 20, 25]          | 5                 | 0                |
+| [2, 4, 6, 8]                 | 5                 | -1               |
+| [1, 3, 5, 7]                 | 4                 | -1               |
+| **Boundary Value Analysis:**        |                   |                  |
+| []          | 5                 | -1               |
+| [5]          |5                  | 0               |
+| [15]          | 5                 | -1               |
+| [1, 1, 1, 1, 1]          | 1                 | 0/1/2/3/4                |
+| [5, 10, 15, 20, 25]          | 5                 | 0                |
+| [5, 10, 15, 20, 25]          | 25                | 4                |
+| [2, 4, 6, 8]                 | 2.2               | Invalid input    |
+| [2, 4, 6, 8]                 | a                 | Invalid input    |
+| [1.1, c, 5, 7]               | 2                 | Invalid input    |
+
