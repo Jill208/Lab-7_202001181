@@ -245,14 +245,14 @@ Assumption: the elements in the array a are sorted in non-decreasing order.
     }
     
     
- **Equivalence Partitioning:**
+ Equivalence Partitioning:
 
 | Tester Action and Input Data     | Expected Outcome      | 
 | ------------- | :---: | 
 | v is present in a        | Index of v         | 
 | v is not present in a         | -1         | 
 
-**Boundary Value Analysis:**
+Boundary Value Analysis:
 
 | Tester Action and Input Data     | Expected Outcome      | 
 | ------------- | :---: | 
@@ -261,7 +261,7 @@ Assumption: the elements in the array a are sorted in non-decreasing order.
 | v is present at the last index of a length of a        | a-1         | 
 | v is not present in a         | -1         | 
 
-**Test suites:**
+Test suites:
 
 | Tester Action and Input Data | Value to be found | Expected Outcome |
 |------------------------------|-------------------|------------------|
@@ -281,3 +281,152 @@ Assumption: the elements in the array a are sorted in non-decreasing order.
 | [2, 4, 6, 8]                 | a                 | Invalid input    |
 | [1.1, c, 5, 7]               | 2                 | Invalid input    |
 
+Program 4: The following problem has been adapted from The Art of Software Testing, by G. Myers (1979). The function triangle takes three integer parameters that are interpreted as the lengths of the sides of a triangle. It returns whether the triangle is equilateral (three lengths equal), isosceles (two lengths equal), scalene (no lengths equal), or invalid (impossible lengths).
+
+ final int EQUILATERAL = 0;
+    final int ISOSCELES = 1;
+    final int SCALENE = 2;
+    final int INVALID = 3;
+    int triangle(int a, int b, int c)
+    {
+        if (a >= b+c || b >= a+c || c >= a+b)
+        return(INVALID);
+        if (a == b && b == c)
+        return(EQUILATERAL);
+        if (a == b || a == c || b == c)
+        return(ISOSCELES);
+        return(SCALENE);
+    }
+    
+    @Test
+    public void testEquilateral() {
+      assertEquals("Equal", unittesting.triangle(3, 3, 3));
+    }
+
+    @Test
+    public void testIsosceles() {
+      assertEquals("Isosceles", unittesting.triangle(5, 5, 6));
+
+    }
+
+    @Test
+    public void testScalene() {
+      assertEquals("Scalene", unittesting.triangle(3, 4, 5));
+    }
+
+    @Test
+    public void testIncorrectInput() {
+      assertEquals("Incorrect input", unittesting.triangle(1, 2, 3));
+
+    }
+    
+**Equivalence Partitioning:**
+
+<table>
+  <tr>
+    <th>Tester Action and Input Data</th>
+    <th>Expected Outcome</th>
+  </tr>
+  <tr>
+    <td>Valid input: a=3, b=3, c=3</td>
+    <td>EQUILATERAL</td>
+  </tr>
+  <tr>
+    <td>Valid input: a=4, b=4, c=5</td>
+    <td>ISOSCELES</td>
+  </tr>
+  <tr>
+    <td>Valid input: a=5, b=4, c=3</td>
+    <td>SCALENE</td>
+  </tr>
+  <tr>
+    <td>Invalid input: a=0, b=0, c=0</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Invalid input: a=-1, b=2, c=3</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Valid input: a=1, b=1, c=1</td>
+    <td>EQUILATERAL</td>
+  </tr>
+  <tr>
+    <td>Valid input: a=2, b=2, c=1</td>
+    <td>ISOSCELES</td>
+  </tr>
+  <tr>
+    <td>Valid input: a=3, b=4, c=5</td>
+    <td>SCALENE</td>
+  </tr>
+  <tr>
+    <td>Invalid input: a=0, b=1, c=1</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Invalid input: a=1, b=0, c=1</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Invalid input: a=1, b=1, c=0</td>
+    <td>INVALID</td>
+  </tr>
+</table>
+
+**Boundary Value Analysis:**
+
+<table>
+  <tr>
+    <th>Tester Action and Input Data</th>
+    <th>Expected Outcome</th>
+  </tr>
+  <tr>
+    <td>Invalid inputs: a = 0, b = 0, c = 0</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Invalid inputs: a + b = c or b + c = a or c + a = b (a=3, b=4, c=8)</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Equilateral triangles: a = b = c = 1</td>
+    <td>EQUILATERAL</td>
+  </tr>
+  <tr>
+    <td>Equilateral triangles: a = b = c = 100</td>
+    <td>EQUILATERAL</td>
+  </tr>
+  <tr>
+    <td>Isosceles triangles: a = b ≠ c = 10</td>
+    <td>ISOSCELES</td>
+  </tr>
+  <tr>
+    <td>Isosceles triangles: a ≠ b = c = 10</td>
+    <td>ISOSCELES</td>
+  </tr>
+  <tr>
+    <td>Isosceles triangles: a = c ≠ b = 10</td>
+    <td>ISOSCELES</td>
+  </tr>
+  <tr>
+    <td>Scalene triangles: a = b + c - 1</td>
+    <td>SCALENE</td>
+  </tr>
+  <tr>
+    <td>Scalene triangles: b = a + c - 1</td>
+    <td>SCALENE</td>
+  </tr>
+  <tr>
+    <td>Scalene triangles: c = a + b - 1</td>
+    <td>SCALENE</td>
+  </tr>
+  <tr>
+    <td>Maximum values: a, b, c = Integer.MAX_VALUE</td>
+    <td>INVALID</td>
+  </tr>
+  <tr>
+    <td>Minimum values: a, b, c = Integer.MIN_VALUE</td>
+    <td>INVALID</td>
+  </tr>
+</table>
+</br>
