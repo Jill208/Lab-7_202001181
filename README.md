@@ -100,4 +100,37 @@ public void test() {
     assertEquals(-1, obj.linearSearch(2, arr4));
 }
 ```
+Equivalence Partitioning:
 
+| Tester Action and Input Data | Expected Outcome |
+|------------------------------|------------------|
+|v is present in a|	Index of v|
+|v is not present in a|	-1|
+
+Boundary Value Analysis:
+
+| Tester Action and Input Data | Expected Outcome |
+|------------------------------|------------------|
+|Empty array a|	-1|
+|v is present at the first index of a|	0|
+|v is present at the last index of a length of a|	a-1|
+|v is not present in a|	-1|
+
+Test suites:
+
+| Tester Action and Input Data | Value to be found | Expected Outcome |
+|------------------------------|-------------------|------------------|
+|Valid partition:		       |                   |                  |
+| [1, 2, 3, 4, 5] |	3 |	2|
+|[5, 10, 15, 20, 25]	|5|	0|
+|[2, 4, 6, 8]	|5	|-1|
+|[1, 3, 5, 7]	|4	|-1|
+|Boundary Value Analysis:	|  | |	
+|[]	|5|	-1|
+|[5]|	5|	0|
+|[15]|	5|	-1|
+|[5, 10, 15, 20, 25]|	5|	0|
+|[5, 10, 15, 20, 25]|	25|	4|
+|[2, 4, 6, 8]|	2.2	|Invalid input|
+|[2, 4, 6, 8]|	a	|Invalid input|
+|[1.1, c, 5, 7]|	2|	Invalid input|
