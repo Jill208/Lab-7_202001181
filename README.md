@@ -1,9 +1,11 @@
 # Lab-7_202001181
+
 **Software Engineering**
 
     Name: Jill Chaudhary
     Student ID: 202001181
-    Lab: 05
+    Lab: 07
+    
 # Section-A
 
 Based on the input ranges, we can identify the following equivalence classes:
