@@ -581,3 +581,45 @@ Test points for non-positive input:<br>
 TP1 (EC2): A=0, B=4, C=5 (invalid input)<br>
 TP2 (EC2): A=-2, B=4, C=5 (invalid input)<br>
 Note: Test cases TC1 to TC10 covers all identified equivalence classes.<br>
+
+
+
+# Section B:
+**1. Control flow diagram**<br>
+![image](https://user-images.githubusercontent.com/83700057/231820665-46616e18-345a-4958-96d9-37416e4ce107.png)
+
+**2. Test sets**<br>
+
+Statement coverage test sets: To achieve statement coverage, we need to make sure that every statement in the code is executed at least once.<br>
+Test 1: p = empty vector<br>
+Test 2: p = vector with one point<br>
+Test 3: p = vector with two points with the same y component<br>
+Test 4: p = vector with two points with different y components<br>
+Test 5: p = vector with three or more points with different y components<br>
+Test 6: p = vector with three or more points with the same y component<br>
+
+
+Branch coverage test sets: To achieve branch coverage, we need to make sure that every possible branch in the code is taken at least once<br>
+Test 1: p = empty vector<br>
+Test 2: p = vector with one point<br>
+Test 3: p = vector with two points with the same y component<br>
+Test 4: p = vector with two points with different y components<br>
+Test 5: p = vector with three or more points with different y components, and none of them have the same x component<br>
+Test 6: p = vector with three or more points with the same y component, and some of them have the same x component<br>
+Test 7: p = vector with three or more points with the same y component, and all of them have the same x component<br>
+
+
+Basic condition coverage test sets: To achieve basic condition coverage, we need to make sure that every basic condition in the code (i.e., every Boolean subexpression) is evaluated as both true and false at least once<br>
+Test 1: p = empty vector<br>
+Test 2: p = vector with one point<br>
+Test 3: p = vector with two points with the same y component, and the first point has a smaller x component<br>
+Test 4: p = vector with two points with the same y component, and the second point has a smaller x component<br>
+Test 5: p = vector with two points with different y components<br>
+Test 6: p = vector with three or more points with different y components, and none of them have the same x component<br>
+Test 7: p = vector with three or more points with the same y component, and some of them have the same x component<br>
+Test 8: p = vector with three or more points with the same y component, and all of them have the same x component.<br>
+
+
+
+Document link which content Screenshots
+[-----](https://docs.google.com/document/d/18u-IbJ71mxQW967XtmtaHkiKIAZFuGNBEBS075aDkAI/edit?usp=sharing)
